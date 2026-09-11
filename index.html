@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategia & Plan de Contenido | Dra. Yosadara Martínez x Lucero Espinosa</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-cream: #F9F6F0;
+            --bg-white: #FFFFFF;
+            --orange-terracotta: #E85A2A;
+            --olive-green: #3A4D39;
+            --text-dark: #1C1B1A;
+            --text-muted: #666360;
+            --border-color: #1C1B1A;
+            --font-heading: 'Instrument Serif', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Ticker / Banner Superior estilo imagen referencia */
+        .ticker-wrap {
+            width: 100%;
+            background-color: var(--orange-terracotta);
+            color: #FFF;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 12px 0;
+            border-bottom: 2px solid var(--border-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        .ticker {
+            display: inline-block;
+            animation: ticker 25s linear infinite;
+        }
+
+        .ticker__item {
+            display: inline-block;
+            padding: 0 2rem;
+        }
+
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        /* Layout Main Structure */
+        header {
+            border-bottom: 2px solid var(--border-color);
+            padding: 2rem 5%;
+            background-color: var(--bg-cream);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .brand-subtitle {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Hero Section Split Layout */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; }
+        }
+
+        .hero-left {
+            padding: 5rem 8%;
+            border-right: 2px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: var(--bg-cream);
+        }
+
+        .hero-right {
+            background-color: var(--orange-terracotta);
+            color: #FFF;
+            padding: 5rem 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-right h1 {
+            color: #FFF;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+        }
+
+        .badge-white {
+            background-color: #FFF;
+            color: var(--text-dark);
+        }
+
+        /* Section Layouts */
+        .section-padding {
+            padding: 5rem 8%;
+        }
+
+        .bordered-section {
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        /* Grid de 3 Pilares y Objetivos */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .grid-3 { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            border: 2px solid var(--border-color);
+            padding: 2rem;
+            background: var(--bg-white);
+            box-shadow: 4px 4px 0px var(--border-color);
+            position: relative;
+        }
+
+        .card h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-number {
+            font-size: 3rem;
+            font-family: var(--font-heading);
+            color: var(--orange-terracotta);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tags / Pill elements como en la imagen */
+        .pill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+
+        .pill {
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border: 2px solid var(--border-color);
+            box-shadow: 2px 2px 0px var(--border-color);
+        }
+
+        .pill-orange { background-color: var(--orange-terracotta); color: white; }
+        .pill-olive { background-color: var(--olive-green); color: white; }
+        .pill-cream { background-color: var(--bg-cream); color: var(--text-dark); }
+
+        /* Matriz de Contenidos (Los 8 contenidos) */
+        .content-matrix {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 900px) {
+            .content-matrix { grid-template-columns: 1fr; }
+        }
+
+        .content-card {
+            border: 2px solid var(--border-color);
+            background: var(--bg-white);
+            padding: 2rem;
+            box-shadow: 6px 6px 0px var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #EEE;
+            padding-bottom: 1rem;
+        }
+
+        .content-tag {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .tag-feed { background: #E1F0DA; color: #274D0F; }
+        .tag-dark { background: #222; color: #FFF; }
+
+        .content-card h4 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .content-details {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .content-details strong {
+            color: var(--orange-terracotta);
+        }
+
+        .content-objective {
+            background-color: var(--bg-cream);
+            padding: 1rem;
+            border-left: 3px solid var(--orange-terracotta);
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        /* Sección de Valor de Agencia / Acompañamiento */
+        .agency-value {
+            background-color: var(--olive-green);
+            color: #FFF;
+        }
+
+        .agency-value .section-title {
+            color: #FFF;
+        }
+
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 900px) {
+            .roadmap-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            .roadmap-grid { grid-template-columns: 1fr; }
+        }
+
+        .roadmap-step {
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .roadmap-step h5 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #FFF;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 8%;
+            background-color: var(--text-dark);
+            color: var(--bg-cream);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        footer h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: var(--orange-terracotta);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 700;
+            border: 2px solid white;
+            box-shadow: 4px 4px 0px white;
+            transition: all 0.2s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MARQUESINA SUPERIOR -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="ticker__item">✦ Estrategia de Contenido Mensual</div>
+            <div class="ticker__item">✦ Dra. Yosadara Martínez</div>
+            <div class="ticker__item">✦ Medicina Estética & Rejuvenecimiento</div>
+            <div class="ticker__item">✦ Enfoque Polanco & CDMX</div>
+            <div class="ticker__item">✦ Estrategia por Lucero Espinosa</div>
+            <div class="ticker__item">✦ Estrategia de Contenido Mensual</div>
+            <div class="ticker__item">✦ Dra. Yosadara Martínez</div>
+            <div class="ticker__item">✦ Medicina Estética & Rejuvenecimiento</div>
+            <div class="ticker__item">✦ Enfoque Polanco & CDMX</div>
+            <div class="ticker__item">✦ Estrategia por Lucero Espinosa</div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <div>
+                <div class="brand-logo">Dra. Yosadara Martínez</div>
+                <div class="brand-subtitle">Medicina Estética • Polanco, CDMX</div>
+            </div>
+            <div>
+                <span class="badge badge-white">Mes 01 / Plan Estratégico</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-left">
+            <span class="badge">Posicionamiento & Captación</span>
+            <h1>Construcción de Autoridad Médica y Captación de Pacientes</h1>
+            <p>Estrategia editorial para consolidar una presencia elegante, técnica y orientada a la conversión sutil de pacientes de alto valor en zonas clave de CDMX.</p>
+        </div>
+        <div class="hero-right">
+            <span class="badge badge-white" style="color:var(--orange-terracotta)">Liderado por</span>
+            <h1 style="font-size: 3rem;">Lucero Espinosa</h1>
+            <p style="margin-bottom: 2rem;">Especialista en Estrategia Digital y Gestión de Marcas Médicas/Premium.</p>
+            <div style="border-top: 1px solid rgba(255,255,255,0.3); padding-top: 1rem; font-size: 0.9rem;">
+                <strong>Objetivo del Mes:</strong> Posicionar tratamientos clave (Juvelook, Radiesse, Botox, Sculptra) sin saturar con venta directa.
+            </div>
+        </div>
+    </section>
+
+    <!-- OBJETIVOS Y PILARES -->
+    <section class="section-padding bordered-section">
+        <h2 class="section-title">Pilares de Comunicación</h2>
+        <p style="margin-bottom: 3rem; max-width: 700px; color: var(--text-muted);">
+            Cada pieza de contenido responde a elevar el perfil bajo una percepción de naturalidad, rigor médico y exclusividad.
+        </p>
+        
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-number">01</div>
+                <h3>Técnica</h3>
+                <p>Demostrar precisión en cada abordaje. Explicar el "por qué" detrás de las zonas tratadas genera certidumbre en pacientes indecisos.</p>
+            </div>
+            <div class="card">
+                <div class="card-number">02</div>
+                <h3>Formación</h3>
+                <p>Resaltar la actualización constante y el respaldo médico especializado, diferenciando la práctica de centros no médicos.</p>
+            </div>
+            <div class="card">
+                <div class="card-number">03</div>
+                <h3>Resultados</h3>
+                <p>Enfoque en sutilidad, armonía y naturalidad. Mostrar que la medicina estética avanzada busca frescura, no transformación drástica.</p>
+            </div>
+        </div>
+
+        <!-- Tags de Tratamientos del Mes -->
+        <div style="margin-top: 4rem;">
+            <h4 style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 1rem;">Prioridad Comercial de Tratamientos (Mes 1):</h4>
+            <div class="pill-container">
+                <span class="pill pill-orange">★ Juvelook (Periocular & Calidad de Piel)</span>
+                <span class="pill pill-olive">★ Radiesse (Bioestimulación Facial)</span>
+                <span class="pill pill-cream">★ Botox (Prevención y Alta Conversión)</span>
+                <span class="pill pill-cream">★ Sculptra Corporal (Cuello, Escote y Manos)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLAN DE CONTENIDO (8 ENTREGABLES) -->
+    <section class="section-padding bordered-section" style="background-color: var(--bg-cream);">
+        <h2 class="section-title">Propuesta de Contenidos (8 Piezas)</h2>
+        <p style="max-width: 800px; color: var(--text-muted);">
+            Distribuimos la estrategia en <strong>Contenido Orgánico Visible en Feed</strong> (construcción de marca y educación) y <strong>Contenido en Circulación Sombra/Ads</strong> (dirigido específicamente a captación directa en Polanco y zonas aledañas sin saturar la estética del perfil).
+        </p>
+
+        <div class="content-matrix">
+
+            <!-- Contenido 1 -->
+            <div class="content-card">
+                <div>
+                    <div class="content-header">
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#01</span>
+                        <span class="content-tag tag-feed">Feed Visible • Reel</span>
+                    </div>
+                    <h4>Juvelook Periocular: "La mirada cansada no siempre es falta de sueño"</h4>
+                    <p class="content-details">
+                        <strong>Tratamiento:</strong> Juvelook<br>
+                        <strong>Pilar:</strong> Técnica + Resultados<br>
+                        <strong>Formato:</strong> Reel dinámico con voz en off explicativa y tomas macro de aplicación.
+                    </p>
+                </div>
+                <div class="content-objective">
+                    <strong>Objetivo:</strong> Generar consciencia sobre la calidad de piel alrededor de los ojos y posicionar Juvelook como el tratamiento ideal para fine lines perioculares.
+                </div>
+            </div>
+
+            <!-- Contenido 2 -->
+            <div class="content-card">
+                <div>
+                    <div class="content-header">
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#02</span>
+                        <span class="content-tag tag-feed">Feed Visible • Carrusel</span>
+                    </div>
+                    <h4>"Bioestimulación vs. Relleno: ¿Qué necesita realmente tu piel?"</h4>
+                    <p class="content-details">
+                        <strong>Tratamiento:</strong> Radiesse<br>
+                        <strong>Pilar:</strong> Formación + Técnica<br>
+                        <strong>Formato:</strong> Carrusel tipográfico limpio, educativo y gráfico.
+                    </p>
+                </div>
+                <div class="content-objective">
+                    <strong>Objetivo:</strong> Educativo. Romper el mito del rostro "inflado" y posicionar el estímulo de colágeno natural con Radiesse.
+                </div>
+            </div>
+
+            <!-- Contenido 3 -->
+            <div class="content-card">
+                <div>
+                    <div class="content-header">
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#03</span>
+                        <span class="content-tag tag-dark">Circulación / Ads • Video Directo</span>
+                    </div>
+                    <h4>Botox de Resultados Naturales: La regla del "menos es más"</h4>
+                    <p class="content-details">
+                        <strong>Tratamiento:</strong> Botox<br>
+                        <strong>Pilar:</strong> Resultados + Conversión<br>
+                        <strong>Formato:</strong> Video hablando a cámara con llamada a la acción hacia WhatsApp (Segmentado Polanco).
+                    </p>
+                </div>
+                <div class="content-objective">
+                    <strong>Objetivo:</strong> Conversión directa. Captar usuarios con intención inmediata de retoque sin alterar la estética limpia del feed.
+                </div>
+            </div>
+
+            <!-- Contenido 4 -->
+            <div class="content-card">
+                <div>
+                    <div class="content-header">
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#04</span>
+                        <span class="content-tag tag-feed">Feed Visible • Reel Estético</span>
+                    </div>
+                    <h4>"Cuello y Manos: Las zonas que revelan la verdadera edad de la piel"</h4>
+                    <p class="content-details">
+                        <strong>Tratamiento:</strong> Sculptra Corporal<br>
+                        <strong>Pilar:</strong> Vanguardia + Técnica<br>
+                        <strong>Formato:</strong> Reel conceptual, elegante, con enfoque en zonas corporales delicadas.
+                    </p>
+                </div>
+                <div class="content-objective">
+                    <strong>Objetivo:</strong> Introducción de servicio clave para medir el interés de la audiencia de alto nivel adquisitivo.
+                </div>
+            </div>
+
+            <!-- Contenido 5 -->
+            <div class="content-card">
+                <div>
+                    <div class="content-header">
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#05</span>
+                        <span class="content-tag tag-feed">Feed Visible • Carrusel/Caso</span>
+                    </div>
+                    <h4>Análisis de Caso: "Armonización invisible y progresiva a los 35+"</h4>
+                    <p class="content-details">
+                        <strong>Tratamiento:</strong> Juvelook + Radiesse<br>
+                        <strong>Pilar:</strong> Resultados + Formación<br>
+                        <strong>Formato:</strong> Desglose médico de abordaje clínico respetando privacidad y elegancia.
+                    </p>
+                </div>
+                <div class="content-objective">
+                    <strong>Objetivo:</strong> Generar autoridad y mostrar el criterio estético y personalizado de la Dra. Yosadara.
+                </div>
+            </div>
+
+            <!-- Contenido 6 -->
+            <div class="content-card">
+                <div>
+                    <div class="content-header">
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#06</span>
+                        <span class="content-tag tag-dark">Circulación / Ads • Dark Post</span>
+                    </div>
+                    <h4>¿Primera vez en consulta estética? Qué esperar de una valoración integral</h4>
+                    <p class="content-details">
+                        <strong>Tratamiento:</strong> Valoración General / Diagnóstico<br>
+                        <strong>Pilar:</strong> Confianza + Cercanía<br>
+                        <strong>Formato:</strong> Ad enfocado a agendamiento directo para residentes en CDMX.
+                    </p>
+                </div>
+                <div class="content-objective">
+                    <strong>Objetivo:</strong> Reducir la fricción inicial del paciente nuevo y llevar tráfico calificado a WhatsApp.
+                </div>
+            </div>
+
+            <!-- Contenido 7 -->
+            <div class="content-card">
+                <div>
+                    <div class="content-header">
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#07</span>
+                        <span class="content-tag tag-feed">Feed Visible • Reel Personal</span>
+                    </div>
+                    <h4>"Mi filosofía médica: Por qué rechazo tratamientos exagerados"</h4>
+                    <p class="content-details">
+                        <strong>Tratamiento:</strong> Filosofía de marca<br>
+                        <strong>Pilar:</strong> Formación + Cercanía<br>
+                        <strong>Formato:</strong> Video humanizado de la doctora expresando la ética de su práctica médica.
+                    </p>
+                </div>
+                <div class="content-objective">
+                    <strong>Objetivo:</strong> Conectar emocionalmente con pacientes que buscan estética discreta y sofisticada.
+                </div>
+            </div>
+
+            <!-- Contenido 8 -->
+            <div class="content-card">
+                <div>
+                    <div class="content-header">
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#08</span>
+                        <span class="content-tag tag-dark">Circulación / Ads • Carrousel Comercial</span>
+                    </div>
+                    <h4>Protocolo Preventivo de Expresión Facil (Botox + Bioestimulación)</h4>
+                    <p class="content-details">
+                        <strong>Tratamiento:</strong> Botox + Radiesse<br>
+                        <strong>Pilar:</strong> Venta Sutil / Conversión<br>
+                        <strong>Formato:</strong> Orientado a conversión de temporada con llamada clara a solicitar agenda.
+                    </p>
+                </div>
+                <div class="content-objective">
+                    <strong>Objetivo:</strong> Captación activa de prospectos listos para agendar en la zona objetivo.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- METRICAS DE SEGUIMIENTO Y ESTATUS -->
+    <section class="section-padding bordered-section">
+        <h2 class="section-title">Medición y Control de Resultados</h2>
+        <p style="margin-bottom: 3rem; color: var(--text-muted);">
+            Monitorearemos los resultados no solo desde la vanidad del alcance, sino desde métricas reales de crecimiento del negocio.
+        </p>
+
+        <div class="grid-3">
+            <div class="card" style="background-color: var(--bg-cream);">
+                <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Atracción Calificada</h4>
+                <ul style="list-style: none; font-size: 0.9rem;">
+                    <li style="margin-bottom: 0.5rem;">✦ Visitas al perfil de Instagram.</li>
+                    <li style="margin-bottom: 0.5rem;">✦ Crecimiento de seguidores locales (CDMX/Polanco).</li>
+                    <li style="margin-bottom: 0.5rem;">✦ Alcance en audiencias target.</li>
+                </ul>
+            </div>
+            <div class="card" style="background-color: var(--bg-cream);">
+                <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Interacción y Confianza</h4>
+                <ul style="list-style: none; font-size: 0.9rem;">
+                    <li style="margin-bottom: 0.5rem;">✦ Guardados en carruseles educativos.</li>
+                    <li style="margin-bottom: 0.5rem;">✦ Mensajes directos (DMs) con dudas de tratamiento.</li>
+                    <li style="margin-bottom: 0.5rem;">✦ Tiempo de visualización en reels explicativos.</li>
+                </ul>
+            </div>
+            <div class="card" style="background-color: var(--bg-cream);">
+                <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Conversión a Pacientes</h4>
+                <ul style="list-style: none; font-size: 0.9rem;">
+                    <li style="margin-bottom: 0.5rem;">✦ Clics en el enlace a WhatsApp / Bio.</li>
+                    <li style="margin-bottom: 0.5rem;">✦ Mensajes iniciados solicitando costo/valoración.</li>
+                    <li style="margin-bottom: 0.5rem;">✦ Citas concretadas atribuidas al contenido.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- METODOLOGIA Y VALOR AGREGADO DE LUCERO ESPINOSA -->
+    <section class="section-padding agency-value">
+        <span class="badge badge-white" style="color:var(--olive-green)">Metodología de Trabajo</span>
+        <h2 class="section-title">Cómo Acompaño la Cuenta Mes a Mes</h2>
+        <p style="max-width: 700px; opacity: 0.9;">
+            Como estratega detrás de tu marca personal médica, mi objetivo es cuidar tu tiempo como especialista, asegurando que la calidad técnica de tu trabajo se traduzca de forma impecable al entorno digital.
+        </p>
+
+        <div class="roadmap-grid">
+            <div class="roadmap-step">
+                <h5>Fase 1</h5>
+                <strong style="display:block; margin-bottom: 0.5rem;">Planificación & Guiones</strong>
+                <p style="font-size: 0.85rem; opacity: 0.8;">Estructura previa de contenidos y guiones de grabación claros para que tu participación en video sea fluida y óptima.</p>
+            </div>
+            <div class="roadmap-step">
+                <h5>Fase 2</h5>
+                <strong style="display:block; margin-bottom: 0.5rem;">Producción & Edición</strong>
+                <p style="font-size: 0.85rem; opacity: 0.8;">Curaduría estética de alta gama, edición limpia de video y diseño tipográfico sofisticado respetando tu línea estética.</p>
+            </div>
+            <div class="roadmap-step">
+                <h5>Fase 3</h5>
+                <strong style="display:block; margin-bottom: 0.5rem;">Distribución Dual</strong>
+                <p style="font-size: 0.85rem; opacity: 0.8;">Segmentación entre contenidos que visten tu Feed institucional y piezas distribuidas hacia captación directa.</p>
+            </div>
+            <div class="roadmap-step">
+                <h5>Fase 4</h5>
+                <strong style="display:block; margin-bottom: 0.5rem;">Análisis & Optimización</strong>
+                <p style="font-size: 0.85rem; opacity: 0.8;">Evaluación mensual de métricas de conversión a pacientes para ajustar los tratamientos foco del siguiente período.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div>
+            <h2>Lucero Espinosa</h2>
+            <p style="color: #AAA; font-size: 0.9rem;">Estrategia & Gestión de Marcas Médicas</p>
+        </div>
+        <div>
+            <a href="#" class="contact-btn">Aprobar Plan Estratégico</a>
+        </div>
+    </footer>
+
+</body>
+</html>
