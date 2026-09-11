@@ -36,7 +36,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Ticker / Banner Superior estilo imagen referencia */
+        /* Ticker / Banner Superior */
         .ticker-wrap {
             width: 100%;
             background-color: var(--orange-terracotta);
@@ -66,10 +66,10 @@
             100% { transform: translate3d(-50%, 0, 0); }
         }
 
-        /* Layout Main Structure */
+        /* Header */
         header {
             border-bottom: 2px solid var(--border-color);
-            padding: 2rem 5%;
+            padding: 2rem 8%;
             background-color: var(--bg-cream);
         }
 
@@ -95,7 +95,7 @@
             font-weight: 600;
         }
 
-        /* Hero Section Split Layout */
+        /* Hero Section Split */
         .hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -122,7 +122,6 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            position: relative;
         }
 
         .hero h1 {
@@ -154,7 +153,7 @@
             color: var(--text-dark);
         }
 
-        /* Section Layouts */
+        /* Common Layouts */
         .section-padding {
             padding: 5rem 8%;
         }
@@ -166,11 +165,11 @@
         .section-title {
             font-family: var(--font-heading);
             font-size: 3rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             line-height: 1.1;
         }
 
-        /* Grid de 3 Pilares y Objetivos */
+        /* Grid 3 Pilares */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -186,7 +185,6 @@
             padding: 2rem;
             background: var(--bg-white);
             box-shadow: 4px 4px 0px var(--border-color);
-            position: relative;
         }
 
         .card h3 {
@@ -202,7 +200,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Tags / Pill elements como en la imagen */
+        /* Pills / Badges */
         .pill-container {
             display: flex;
             flex-wrap: wrap;
@@ -223,7 +221,7 @@
         .pill-olive { background-color: var(--olive-green); color: white; }
         .pill-cream { background-color: var(--bg-cream); color: var(--text-dark); }
 
-        /* Matriz de Contenidos (Los 8 contenidos) */
+        /* Matriz de Contenidos (8 tarjetas) */
         .content-matrix {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -290,7 +288,119 @@
             font-style: italic;
         }
 
-        /* Sección de Valor de Agencia / Acompañamiento */
+        /* ESTILOS DEL CALENDARIO DE PUBLICACIONES */
+        .calendar-wrapper {
+            background-color: var(--bg-white);
+            border: 2px solid var(--border-color);
+            box-shadow: 8px 8px 0px var(--border-color);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .calendar-header-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .calendar-month-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+        }
+
+        .calendar-legend {
+            display: flex;
+            gap: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        .calendar-day-name {
+            text-align: center;
+            font-weight: 800;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            padding: 8px 0;
+            border-bottom: 2px solid var(--border-color);
+            background: var(--bg-cream);
+        }
+
+        .calendar-cell {
+            min-height: 110px;
+            border: 1px solid #DDD;
+            padding: 8px;
+            background: #FAFAFA;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .calendar-cell.empty {
+            background: #F2F0EB;
+            border-color: transparent;
+        }
+
+        .cell-number {
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .cell-event {
+            background-color: var(--orange-terracotta);
+            color: white;
+            padding: 6px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border: 1px solid var(--border-color);
+            box-shadow: 2px 2px 0px var(--border-color);
+            line-height: 1.2;
+        }
+
+        .cell-event.event-dark {
+            background-color: var(--olive-green);
+        }
+
+        .cell-event .event-post-num {
+            display: block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            opacity: 0.9;
+            margin-bottom: 2px;
+        }
+
+        @media (max-width: 800px) {
+            .calendar-grid { grid-template-columns: repeat(2, 1fr); }
+            .calendar-day-name { display: none; }
+            .calendar-cell { min-height: 80px; }
+            .calendar-cell.empty { display: none; }
+        }
+
+        /* Sección de Valor de Agencia */
         .agency-value {
             background-color: var(--olive-green);
             color: #FFF;
@@ -437,7 +547,6 @@
             </div>
         </div>
 
-        <!-- Tags de Tratamientos del Mes -->
         <div style="margin-top: 4rem;">
             <h4 style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 1rem;">Prioridad Comercial de Tratamientos (Mes 1):</h4>
             <div class="pill-container">
@@ -449,11 +558,139 @@
         </div>
     </section>
 
-    <!-- PLAN DE CONTENIDO (8 ENTREGABLES) -->
+    <!-- NUEVA SECCIÓN: CALENDARIO DE PUBLICACIÓN -->
     <section class="section-padding bordered-section" style="background-color: var(--bg-cream);">
+        <h2 class="section-title">Calendario de Publicación</h2>
+        <p style="max-width: 800px; color: var(--text-muted);">
+            Cronograma del primer mes de publicaciones: arrancamos el <strong>viernes 18 de septiembre</strong> y continuamos todos los <strong>martes y jueves</strong> hasta completar los 8 contenidos estratégicos.
+        </p>
+
+        <div class="calendar-wrapper">
+            <div class="calendar-header-nav">
+                <div class="calendar-month-title">Septiembre / Octubre</div>
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background-color: var(--orange-terracotta);"></div>
+                        <span>Feed Visible (Orgánico)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background-color: var(--olive-green);"></div>
+                        <span>Circulación / Ads (Dark Post)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calendar-grid">
+                <!-- Días de la semana -->
+                <div class="calendar-day-name">Lun</div>
+                <div class="calendar-day-name">Mar</div>
+                <div class="calendar-day-name">Mié</div>
+                <div class="calendar-day-name">Jue</div>
+                <div class="calendar-day-name">Vie</div>
+                <div class="calendar-day-name">Sáb</div>
+                <div class="calendar-day-name">Dom</div>
+
+                <!-- Semana 1 (14 al 20 de Septiembre) -->
+                <div class="calendar-cell"><span class="cell-number">14 Sep</span></div>
+                <div class="calendar-cell"><span class="cell-number">15 Sep</span></div>
+                <div class="calendar-cell"><span class="cell-number">16 Sep</span></div>
+                <div class="calendar-cell"><span class="cell-number">17 Sep</span></div>
+                <div class="calendar-cell" style="background:#FFF;">
+                    <span class="cell-number" style="color:var(--orange-terracotta);">18 Sep</span>
+                    <div class="cell-event">
+                        <span class="event-post-num">Post #1 • Feed</span>
+                        Juvelook Periocular
+                    </div>
+                </div>
+                <div class="calendar-cell"><span class="cell-number">19 Sep</span></div>
+                <div class="calendar-cell"><span class="cell-number">20 Sep</span></div>
+
+                <!-- Semana 2 (21 al 27 de Septiembre) -->
+                <div class="calendar-cell"><span class="cell-number">21 Sep</span></div>
+                <div class="calendar-cell" style="background:#FFF;">
+                    <span class="cell-number" style="color:var(--orange-terracotta);">22 Sep</span>
+                    <div class="cell-event">
+                        <span class="event-post-num">Post #2 • Feed</span>
+                        Radiesse Bioestimulación
+                    </div>
+                </div>
+                <div class="calendar-cell"><span class="cell-number">23 Sep</span></div>
+                <div class="calendar-cell" style="background:#FFF;">
+                    <span class="cell-number" style="color:var(--olive-green);">24 Sep</span>
+                    <div class="cell-event event-dark">
+                        <span class="event-post-num">Post #3 • Ads</span>
+                        Botox Natural
+                    </div>
+                </div>
+                <div class="calendar-cell"><span class="cell-number">25 Sep</span></div>
+                <div class="calendar-cell"><span class="cell-number">26 Sep</span></div>
+                <div class="calendar-cell"><span class="cell-number">27 Sep</span></div>
+
+                <!-- Semana 3 (28 de Septiembre al 4 de Octubre) -->
+                <div class="calendar-cell"><span class="cell-number">28 Sep</span></div>
+                <div class="calendar-cell" style="background:#FFF;">
+                    <span class="cell-number" style="color:var(--orange-terracotta);">29 Sep</span>
+                    <div class="cell-event">
+                        <span class="event-post-num">Post #4 • Feed</span>
+                        Sculptra Corporal
+                    </div>
+                </div>
+                <div class="calendar-cell"><span class="cell-number">30 Sep</span></div>
+                <div class="calendar-cell" style="background:#FFF;">
+                    <span class="cell-number" style="color:var(--orange-terracotta);">01 Oct</span>
+                    <div class="cell-event">
+                        <span class="event-post-num">Post #5 • Feed</span>
+                        Caso Clínico Armonización
+                    </div>
+                </div>
+                <div class="calendar-cell"><span class="cell-number">02 Oct</span></div>
+                <div class="calendar-cell"><span class="cell-number">03 Oct</span></div>
+                <div class="calendar-cell"><span class="cell-number">04 Oct</span></div>
+
+                <!-- Semana 4 (5 al 11 de Octubre) -->
+                <div class="calendar-cell"><span class="cell-number">05 Oct</span></div>
+                <div class="calendar-cell" style="background:#FFF;">
+                    <span class="cell-number" style="color:var(--olive-green);">06 Oct</span>
+                    <div class="cell-event event-dark">
+                        <span class="event-post-num">Post #6 • Ads</span>
+                        Valoración Integral
+                    </div>
+                </div>
+                <div class="calendar-cell"><span class="cell-number">07 Oct</span></div>
+                <div class="calendar-cell" style="background:#FFF;">
+                    <span class="cell-number" style="color:var(--orange-terracotta);">08 Oct</span>
+                    <div class="cell-event">
+                        <span class="event-post-num">Post #7 • Feed</span>
+                        Filosofía Médica
+                    </div>
+                </div>
+                <div class="calendar-cell"><span class="cell-number">09 Oct</span></div>
+                <div class="calendar-cell"><span class="cell-number">10 Oct</span></div>
+                <div class="calendar-cell"><span class="cell-number">11 Oct</span></div>
+
+                <!-- Semana 5 (12 al 15 de Octubre) -->
+                <div class="calendar-cell"><span class="cell-number">12 Oct</span></div>
+                <div class="calendar-cell" style="background:#FFF;">
+                    <span class="cell-number" style="color:var(--olive-green);">13 Oct</span>
+                    <div class="cell-event event-dark">
+                        <span class="event-post-num">Post #8 • Ads</span>
+                        Protocolo Preventivo
+                    </div>
+                </div>
+                <div class="calendar-cell empty"></div>
+                <div class="calendar-cell empty"></div>
+                <div class="calendar-cell empty"></div>
+                <div class="calendar-cell empty"></div>
+                <div class="calendar-cell empty"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLAN DE CONTENIDO (8 ENTREGABLES) -->
+    <section class="section-padding bordered-section">
         <h2 class="section-title">Propuesta de Contenidos (8 Piezas)</h2>
         <p style="max-width: 800px; color: var(--text-muted);">
-            Distribuimos la estrategia en <strong>Contenido Orgánico Visible en Feed</strong> (construcción de marca y educación) y <strong>Contenido en Circulación Sombra/Ads</strong> (dirigido específicamente a captación directa en Polanco y zonas aledañas sin saturar la estética del perfil).
+            Distribuimos la estrategia en <strong>Contenido Orgánico Visible en Feed</strong> (construcción de marca y educación) y <strong>Contenido en Circulación Sombra/Ads</strong> (dirigido específicamente a captación directa en Polanco y zonas aledañas).
         </p>
 
         <div class="content-matrix">
@@ -462,7 +699,7 @@
             <div class="content-card">
                 <div>
                     <div class="content-header">
-                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#01</span>
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#01 • 18 SEP</span>
                         <span class="content-tag tag-feed">Feed Visible • Reel</span>
                     </div>
                     <h4>Juvelook Periocular: "La mirada cansada no siempre es falta de sueño"</h4>
@@ -473,7 +710,7 @@
                     </p>
                 </div>
                 <div class="content-objective">
-                    <strong>Objetivo:</strong> Generar consciencia sobre la calidad de piel alrededor de los ojos y posicionar Juvelook como el tratamiento ideal para fine lines perioculares.
+                    <strong>Objetivo:</strong> Generar conciencia sobre la calidad de piel alrededor de los ojos y posicionar Juvelook como el tratamiento ideal para fine lines perioculares.
                 </div>
             </div>
 
@@ -481,7 +718,7 @@
             <div class="content-card">
                 <div>
                     <div class="content-header">
-                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#02</span>
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#02 • 22 SEP</span>
                         <span class="content-tag tag-feed">Feed Visible • Carrusel</span>
                     </div>
                     <h4>"Bioestimulación vs. Relleno: ¿Qué necesita realmente tu piel?"</h4>
@@ -500,7 +737,7 @@
             <div class="content-card">
                 <div>
                     <div class="content-header">
-                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#03</span>
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#03 • 24 SEP</span>
                         <span class="content-tag tag-dark">Circulación / Ads • Video Directo</span>
                     </div>
                     <h4>Botox de Resultados Naturales: La regla del "menos es más"</h4>
@@ -519,7 +756,7 @@
             <div class="content-card">
                 <div>
                     <div class="content-header">
-                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#04</span>
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#04 • 29 SEP</span>
                         <span class="content-tag tag-feed">Feed Visible • Reel Estético</span>
                     </div>
                     <h4>"Cuello y Manos: Las zonas que revelan la verdadera edad de la piel"</h4>
@@ -538,7 +775,7 @@
             <div class="content-card">
                 <div>
                     <div class="content-header">
-                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#05</span>
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#05 • 01 OCT</span>
                         <span class="content-tag tag-feed">Feed Visible • Carrusel/Caso</span>
                     </div>
                     <h4>Análisis de Caso: "Armonización invisible y progresiva a los 35+"</h4>
@@ -557,7 +794,7 @@
             <div class="content-card">
                 <div>
                     <div class="content-header">
-                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#06</span>
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#06 • 06 OCT</span>
                         <span class="content-tag tag-dark">Circulación / Ads • Dark Post</span>
                     </div>
                     <h4>¿Primera vez en consulta estética? Qué esperar de una valoración integral</h4>
@@ -576,10 +813,10 @@
             <div class="content-card">
                 <div>
                     <div class="content-header">
-                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#07</span>
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#07 • 08 OCT</span>
                         <span class="content-tag tag-feed">Feed Visible • Reel Personal</span>
                     </div>
-                    <h4>"Mi filosofía médica: Por qué rechazo tratamientos exagerados"</h4>
+                    <h4>"Mi filosofía médica: Por qué rechazo tratamientos exaggerated"</h4>
                     <p class="content-details">
                         <strong>Tratamiento:</strong> Filosofía de marca<br>
                         <strong>Pilar:</strong> Formación + Cercanía<br>
@@ -595,10 +832,10 @@
             <div class="content-card">
                 <div>
                     <div class="content-header">
-                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#08</span>
+                        <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#08 • 13 OCT</span>
                         <span class="content-tag tag-dark">Circulación / Ads • Carrousel Comercial</span>
                     </div>
-                    <h4>Protocolo Preventivo de Expresión Facil (Botox + Bioestimulación)</h4>
+                    <h4>Protocolo Preventivo de Expresión Facial (Botox + Bioestimulación)</h4>
                     <p class="content-details">
                         <strong>Tratamiento:</strong> Botox + Radiesse<br>
                         <strong>Pilar:</strong> Venta Sutil / Conversión<br>
@@ -648,7 +885,7 @@
         </div>
     </section>
 
-    <!-- METODOLOGIA Y VALOR AGREGADO DE LUCERO ESPINOSA -->
+    <!-- METODOLOGIA DE LUCERO ESPINOSA -->
     <section class="section-padding agency-value">
         <span class="badge badge-white" style="color:var(--olive-green)">Metodología de Trabajo</span>
         <h2 class="section-title">Cómo Acompaño la Cuenta Mes a Mes</h2>
