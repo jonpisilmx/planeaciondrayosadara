@@ -221,74 +221,7 @@
         .pill-olive { background-color: var(--olive-green); color: white; }
         .pill-cream { background-color: var(--bg-cream); color: var(--text-dark); }
 
-        /* Matriz de Contenidos (8 tarjetas) */
-        .content-matrix {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        @media (max-width: 900px) {
-            .content-matrix { grid-template-columns: 1fr; }
-        }
-
-        .content-card {
-            border: 2px solid var(--border-color);
-            background: var(--bg-white);
-            padding: 2rem;
-            box-shadow: 6px 6px 0px var(--border-color);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .content-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid #EEE;
-            padding-bottom: 1rem;
-        }
-
-        .content-tag {
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            padding: 4px 10px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-        }
-
-        .tag-feed { background: #E1F0DA; color: #274D0F; }
-        .tag-dark { background: #222; color: #FFF; }
-
-        .content-card h4 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 0.8rem;
-        }
-
-        .content-details {
-            font-size: 0.9rem;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
-
-        .content-details strong {
-            color: var(--orange-terracotta);
-        }
-
-        .content-objective {
-            background-color: var(--bg-cream);
-            padding: 1rem;
-            border-left: 3px solid var(--orange-terracotta);
-            font-size: 0.85rem;
-            font-style: italic;
-        }
-
-        /* ESTILOS DEL CALENDARIO DE PUBLICACIONES */
+        /* CALENDARIO DE PUBLICACIÓN */
         .calendar-wrapper {
             background-color: var(--bg-white);
             border: 2px solid var(--border-color);
@@ -398,6 +331,199 @@
             .calendar-day-name { display: none; }
             .calendar-cell { min-height: 80px; }
             .calendar-cell.empty { display: none; }
+        }
+
+        /* Matriz de Contenidos (8 tarjetas) */
+        .content-matrix {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 900px) {
+            .content-matrix { grid-template-columns: 1fr; }
+        }
+
+        .content-card {
+            border: 2px solid var(--border-color);
+            background: var(--bg-white);
+            padding: 2rem;
+            box-shadow: 6px 6px 0px var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #EEE;
+            padding-bottom: 1rem;
+        }
+
+        .content-tag {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .tag-feed { background: #E1F0DA; color: #274D0F; }
+        .tag-dark { background: #222; color: #FFF; }
+
+        .content-card h4 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .content-details {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .content-details strong {
+            color: var(--orange-terracotta);
+        }
+
+        .content-objective {
+            background-color: var(--bg-cream);
+            padding: 1rem;
+            border-left: 3px solid var(--orange-terracotta);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Botón de Guión */
+        .btn-script {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--text-dark);
+            color: #FFF;
+            padding: 10px 18px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border: 2px solid var(--border-color);
+            box-shadow: 3px 3px 0px var(--orange-terracotta);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: fit-content;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-script:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0px var(--orange-terracotta);
+            background-color: var(--orange-terracotta);
+            color: #FFF;
+        }
+
+        /* MODAL / VENTANA FLOTANTE */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(28, 27, 26, 0.75);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 1.5rem;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            background-color: var(--bg-cream);
+            border: 3px solid var(--border-color);
+            box-shadow: 10px 10px 0px var(--orange-terracotta);
+            width: 100%;
+            max-width: 750px;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: translateY(0);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--border-color);
+            color: #FFF;
+            border: none;
+            width: 36px;
+            height: 36px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 0px var(--orange-terracotta);
+        }
+
+        .modal-close-btn:hover {
+            background: var(--orange-terracotta);
+        }
+
+        .modal-header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h3 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            line-height: 1.1;
+        }
+
+        .script-section {
+            margin-bottom: 1.2rem;
+            background: #FFF;
+            border: 1px solid var(--border-color);
+            padding: 1.2rem;
+        }
+
+        .script-section-title {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--orange-terracotta);
+            margin-bottom: 0.4rem;
+        }
+
+        .script-text {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            white-space: pre-line;
         }
 
         /* Sección de Valor de Agencia */
@@ -558,7 +684,7 @@
         </div>
     </section>
 
-    <!-- NUEVA SECCIÓN: CALENDARIO DE PUBLICACIÓN -->
+    <!-- CALENDARIO DE PUBLICACIÓN -->
     <section class="section-padding bordered-section" style="background-color: var(--bg-cream);">
         <h2 class="section-title">Calendario de Publicación</h2>
         <p style="max-width: 800px; color: var(--text-muted);">
@@ -686,11 +812,11 @@
         </div>
     </section>
 
-    <!-- PLAN DE CONTENIDO (8 ENTREGABLES) -->
+    <!-- PLAN DE CONTENIDO (8 ENTREGABLES CON BOTÓN VER GUIÓN) -->
     <section class="section-padding bordered-section">
-        <h2 class="section-title">Propuesta de Contenidos (8 Piezas)</h2>
+        <h2 class="section-title">Propuesta de Contenidos & Guiones</h2>
         <p style="max-width: 800px; color: var(--text-muted);">
-            Distribuimos la estrategia en <strong>Contenido Orgánico Visible en Feed</strong> (construcción de marca y educación) y <strong>Contenido en Circulación Sombra/Ads</strong> (dirigido específicamente a captación directa en Polanco y zonas aledañas).
+            Haz clic en <strong>"Ver Guión"</strong> en cada tarjeta para desplegar el contenido detallado, gancho visual, estructura de voz en off, copy estructurado y llamada a la acción.
         </p>
 
         <div class="content-matrix">
@@ -706,11 +832,16 @@
                     <p class="content-details">
                         <strong>Tratamiento:</strong> Juvelook<br>
                         <strong>Pilar:</strong> Técnica + Resultados<br>
-                        <strong>Formato:</strong> Reel dinámico con voz en off explicativa y tomas macro de aplicación.
+                        <strong>Formato:</strong> Reel dinámico con voz en off explicativa.
                     </p>
                 </div>
-                <div class="content-objective">
-                    <strong>Objetivo:</strong> Generar conciencia sobre la calidad de piel alrededor de los ojos y posicionar Juvelook como el tratamiento ideal para fine lines perioculares.
+                <div>
+                    <div class="content-objective">
+                        <strong>Objetivo:</strong> Concienciar sobre calidad de piel periocular y posicionar Juvelook.
+                    </div>
+                    <button class="btn-script" onclick="openModal(1)">
+                        <span>🔍</span> Ver Guión
+                    </button>
                 </div>
             </div>
 
@@ -725,11 +856,16 @@
                     <p class="content-details">
                         <strong>Tratamiento:</strong> Radiesse<br>
                         <strong>Pilar:</strong> Formación + Técnica<br>
-                        <strong>Formato:</strong> Carrusel tipográfico limpio, educativo y gráfico.
+                        <strong>Formato:</strong> Carrusel tipográfico limpio y gráfico.
                     </p>
                 </div>
-                <div class="content-objective">
-                    <strong>Objetivo:</strong> Educativo. Romper el mito del rostro "inflado" y posicionar el estímulo de colágeno natural con Radiesse.
+                <div>
+                    <div class="content-objective">
+                        <strong>Objetivo:</strong> Educativo. Romper mito del rostro inflado y posicionar colágeno propio.
+                    </div>
+                    <button class="btn-script" onclick="openModal(2)">
+                        <span>🔍</span> Ver Guión
+                    </button>
                 </div>
             </div>
 
@@ -744,11 +880,16 @@
                     <p class="content-details">
                         <strong>Tratamiento:</strong> Botox<br>
                         <strong>Pilar:</strong> Resultados + Conversión<br>
-                        <strong>Formato:</strong> Video hablando a cámara con llamada a la acción hacia WhatsApp (Segmentado Polanco).
+                        <strong>Formato:</strong> Hablando a cámara directo con CTA a WhatsApp.
                     </p>
                 </div>
-                <div class="content-objective">
-                    <strong>Objetivo:</strong> Conversión directa. Captar usuarios con intención inmediata de retoque sin alterar la estética limpia del feed.
+                <div>
+                    <div class="content-objective">
+                        <strong>Objetivo:</strong> Conversión directa en Polanco / CDMX sin saturar el feed.
+                    </div>
+                    <button class="btn-script" onclick="openModal(3)">
+                        <span>🔍</span> Ver Guión
+                    </button>
                 </div>
             </div>
 
@@ -763,11 +904,16 @@
                     <p class="content-details">
                         <strong>Tratamiento:</strong> Sculptra Corporal<br>
                         <strong>Pilar:</strong> Vanguardia + Técnica<br>
-                        <strong>Formato:</strong> Reel conceptual, elegante, con enfoque en zonas corporales delicadas.
+                        <strong>Formato:</strong> Reel conceptual y elegante sobre zonas delicadas.
                     </p>
                 </div>
-                <div class="content-objective">
-                    <strong>Objetivo:</strong> Introducción de servicio clave para medir el interés de la audiencia de alto nivel adquisitivo.
+                <div>
+                    <div class="content-objective">
+                        <strong>Objetivo:</strong> Testear e introducir Sculptra en zonas corporales de alto interés.
+                    </div>
+                    <button class="btn-script" onclick="openModal(4)">
+                        <span>🔍</span> Ver Guión
+                    </button>
                 </div>
             </div>
 
@@ -782,11 +928,16 @@
                     <p class="content-details">
                         <strong>Tratamiento:</strong> Juvelook + Radiesse<br>
                         <strong>Pilar:</strong> Resultados + Formación<br>
-                        <strong>Formato:</strong> Desglose médico de abordaje clínico respetando privacidad y elegancia.
+                        <strong>Formato:</strong> Desglose médico de abordaje clínico integral.
                     </p>
                 </div>
-                <div class="content-objective">
-                    <strong>Objetivo:</strong> Generar autoridad y mostrar el criterio estético y personalizado de la Dra. Yosadara.
+                <div>
+                    <div class="content-objective">
+                        <strong>Objetivo:</strong> Generar máxima autoridad y mostrar criterio médico personalizado.
+                    </div>
+                    <button class="btn-script" onclick="openModal(5)">
+                        <span>🔍</span> Ver Guión
+                    </button>
                 </div>
             </div>
 
@@ -801,11 +952,16 @@
                     <p class="content-details">
                         <strong>Tratamiento:</strong> Valoración General / Diagnóstico<br>
                         <strong>Pilar:</strong> Confianza + Cercanía<br>
-                        <strong>Formato:</strong> Ad enfocado a agendamiento directo para residentes en CDMX.
+                        <strong>Formato:</strong> Ad enfocado a agendamiento directo en CDMX.
                     </p>
                 </div>
-                <div class="content-objective">
-                    <strong>Objetivo:</strong> Reducir la fricción inicial del paciente nuevo y llevar tráfico calificado a WhatsApp.
+                <div>
+                    <div class="content-objective">
+                        <strong>Objetivo:</strong> Eliminar el temor al diagnóstico inicial y captar nuevos pacientes.
+                    </div>
+                    <button class="btn-script" onclick="openModal(6)">
+                        <span>🔍</span> Ver Guión
+                    </button>
                 </div>
             </div>
 
@@ -816,15 +972,20 @@
                         <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#07 • 08 OCT</span>
                         <span class="content-tag tag-feed">Feed Visible • Reel Personal</span>
                     </div>
-                    <h4>"Mi filosofía médica: Por qué rechazo tratamientos exaggerated"</h4>
+                    <h4>"Mi filosofía médica: Por qué rechazo tratamientos exagerados"</h4>
                     <p class="content-details">
                         <strong>Tratamiento:</strong> Filosofía de marca<br>
                         <strong>Pilar:</strong> Formación + Cercanía<br>
-                        <strong>Formato:</strong> Video humanizado de la doctora expresando la ética de su práctica médica.
+                        <strong>Formato:</strong> Video humanizado y honesto a cámara.
                     </p>
                 </div>
-                <div class="content-objective">
-                    <strong>Objetivo:</strong> Conectar emocionalmente con pacientes que buscan estética discreta y sofisticada.
+                <div>
+                    <div class="content-objective">
+                        <strong>Objetivo:</strong> Conectar emocionalmente con pacientes que buscan estética natural.
+                    </div>
+                    <button class="btn-script" onclick="openModal(7)">
+                        <span>🔍</span> Ver Guión
+                    </button>
                 </div>
             </div>
 
@@ -833,17 +994,22 @@
                 <div>
                     <div class="content-header">
                         <span class="content-number" style="font-weight: 800; color: var(--orange-terracotta);">#08 • 13 OCT</span>
-                        <span class="content-tag tag-dark">Circulación / Ads • Carrousel Comercial</span>
+                        <span class="content-tag tag-dark">Circulación / Ads • Carrusel Comercial</span>
                     </div>
                     <h4>Protocolo Preventivo de Expresión Facial (Botox + Bioestimulación)</h4>
                     <p class="content-details">
                         <strong>Tratamiento:</strong> Botox + Radiesse<br>
                         <strong>Pilar:</strong> Venta Sutil / Conversión<br>
-                        <strong>Formato:</strong> Orientado a conversión de temporada con llamada clara a solicitar agenda.
+                        <strong>Formato:</strong> Carrusel enfocado a conversión directa de temporada.
                     </p>
                 </div>
-                <div class="content-objective">
-                    <strong>Objetivo:</strong> Captación activa de prospectos listos para agendar en la zona objetivo.
+                <div>
+                    <div class="content-objective">
+                        <strong>Objetivo:</strong> Captación activa de prospectos listos para agendar valoración.
+                    </div>
+                    <button class="btn-script" onclick="openModal(8)">
+                        <span>🔍</span> Ver Guión
+                    </button>
                 </div>
             </div>
 
@@ -928,5 +1094,130 @@
         </div>
     </footer>
 
+    <!-- VENTANA FLOTANTE / MODAL DE GUIONES -->
+    <div class="modal-overlay" id="scriptModal" onclick="closeModalOnOverlay(event)">
+        <div class="modal-card">
+            <button class="modal-close-btn" onclick="closeModal()">✕</button>
+            <div class="modal-header">
+                <span class="badge" id="modalTag">Feed Visible</span>
+                <h3 id="modalTitle">Título del Guión</h3>
+            </div>
+            <div id="modalBody">
+                <!-- Se inyecta dinámicamente con JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT PARA LOS GUIONES Y MODAL -->
+    <script>
+        const scriptsData = {
+            1: {
+                tag: "Feed Visible • Reel (18 SEP)",
+                title: "Juvelook Periocular: 'La mirada cansada no siempre es falta de sueño'",
+                hook: "🎬 Gancho Visual (0-3s): La Dra. Yosadara aplicando suavemente un parche de gel o examinando con lupa dermatológica la zona periocular de una paciente. Texto en pantalla: '¿Ojeras que no se quitan ni durmiendo 8 horas?'",
+                voiceover: "🗣️ Guión Hablado / Voiceover:\n'Muchas veces creemos que la mirada cansada se resuelve con descanso o cremas hidratantes. Pero la piel alrededor de los ojos es 5 veces más delgada que la del resto del rostro, y cuando pierde colágeno, se transparenta y surcan líneas finas.\n\nEn consulta utilizo Juvelook, una combinación híbrida de ácido hialurónico y ácido poli-láctico diseñada específicamente para esta zona tan delicada. No aporta volumen ni altera la forma natural de tu ojo; su función es regenerar la densidad de la piel desde adentro.'",
+                caption: "📝 Copy para Instagram:\nLa zona periocular requiere un abordaje médico sumamente fino y preciso. Juvelook no busca 'rellenar', sino devolverle a la piel su grosor, elasticidad y luminosidad natural sin cambiar tus facciones.\n\n✨ Indicado para: finas líneas de expresión, piel adelgazada bajo el ojo y pérdida de firmeza.\n\n📍 Consulta médica especializada en Polanco.\n📩 Envíanos un mensaje privado para evaluar si eres candidata a este tratamiento.",
+                cta: "👉 Llamada a la acción (CTA): 'Comenta MIRADA o escríbeme por mensaje directo para agendar una valoración personalizada en mi consultorio de Polanco.'"
+            },
+            2: {
+                tag: "Feed Visible • Carrusel (22 SEP)",
+                title: "Bioestimulación vs. Relleno: ¿Qué necesita realmente tu piel?",
+                hook: "📸 Gancho de Carrusel (Portada): Tipografía elegante sobre fondo neutro. Texto: '¿Rellenar o bioestimular? El error más común al buscar rejuvenecimiento facial.'",
+                voiceover: "📖 Estructura de Láminas del Carrusel:\n• Slide 1: El dilema visual. ¿Por qué algunos tratamientos se ven artificiales? (La diferencia entre aportar volumen extra y estimular la piel).\n• Slide 2: ¿Qué hace un Relleno? Restaura volúmenes perdidos en zonas estructurales específicas.\n• Slide 3: ¿Qué hace Radiesse (Bioestimulador)? Actúa como un 'andamio' de microesferas que le enseña a tus propias células a producir colágeno y elastina nuevos.\n• Slide 4: El resultado de Radiesse: Firmeza, definición del óvalo facial y mejoría en la textura de la piel sin modificar tu estructura natural.\n• Slide 5: El criterio médico. No existe un tratamiento universal; la clave está en el diagnóstico en consulta.",
+                caption: "📝 Copy para Instagram:\nExiste el mito de que cualquier tratamiento médico estético va a cambiar la forma de tu rostro. Nada más alejado de la realidad cuando se trabaja con criterio clínico.\n\nRadiesse es uno de mis bioestimuladores favoritos porque trabaja en sinergia con tu propia biología: estimula la producción de colágeno progresivo y duradero.\n\n¿Quieres saber cuál es el protocolo ideal para tu tipo de piel? Déjame tus dudas en comentarios o agenda tu cita.",
+                cta: "👉 CTA: 'Guarda esta publicación para tu próxima consulta estética o comparte con alguien que busque resultados sutiles y elegantes.'"
+            },
+            3: {
+                tag: "Circulación / Ads • Video Directo (24 SEP)",
+                title: "Botox de Resultados Naturales: La regla del 'menos es más'",
+                hook: "🎬 Gancho Visual (0-3s): Dra. Yosadara a cámara sonriendo de forma natural, mostrando movimiento sutil y expresivo en su rostro. Texto: '¿Botox congelado? Así no se trabaja en mi consulta.'",
+                voiceover: "🗣️ Guión Hablado directo a cámara:\n'El mayor miedo de mis pacientes cuando vienen por primera vez a aplicarse Botox es perder su expresión o verse rígidas. Y las entiendo perfectamente.\n\nMi objetivo en consulta no es paralizar tu rostro, sino relajar estratégicamente los músculos hipertónicos para prevenir arrugas profundas sin perder tu esencia ni tu sonrisa natural. La clave está en la dosis exacta y en el conocimiento profundo de la anatomía facial.'",
+                caption: "📝 Copy para Ad (Segmentado CDMX / Polanco):\nUna aplicación médica precisa de toxina botulínica te permite lucir un rostro descansado, fresco y rejuvenecido, conservando toda tu gesticulación.\n\nTratamiento de alta precisión en Polanco.\n👩‍⚕️ Dra. Yosadara Martínez | Especialista en Medicina Estética.",
+                cta: "👉 CTA Comercial Directo: 'Haz clic en el botón de abajo o en el enlace de la bio para agendar tu valoración esta semana vía WhatsApp.'"
+            },
+            4: {
+                tag: "Feed Visible • Reel Estético (29 SEP)",
+                title: "Cuello y Manos: Las zonas que revelan la verdadera edad de la piel",
+                hook: "🎬 Gancho Visual (0-3s): Planos detalle en cámara lenta: manos cuidadas sosteniendo una taza de cerámica y plano sutil de la zona del cuello/escote. Texto: 'Invertimos mucho en el rostro... ¿pero qué pasa con el cuello y las manos?'",
+                voiceover: "🗣️ Voiceover sofisticado y pausado:\n'A menudo dedicamos toda nuestra rutina de cuidado al rostro, pero el cuello, el escote y las manos son las zonas que primero revelan el paso del tiempo por tener una piel extremadamente fina y expuesta al sol.\n\nCon Sculptra corporal podemos tratar estas áreas de forma integral. Al ser un bioestimulador de ácido poli-L-láctico, restaura gradualmente la firmeza perdida y mejora la textura arrugada, devolviendo una apariencia tersa y cuidada.'",
+                caption: "📝 Copy para Instagram:\nLa verdadera elegancia en medicina estética está en la armonía global. Tratar el cuello, el escote y el dorso de las manos es el complemento indispensable para un rejuvenecimiento coherente y sutil.\n\nSculptra reactiva la síntesis natural de colágeno en áreas corporales delicadas con resultados progresivos.\n\n📍 Consultorio en Polanco.",
+                cta: "👉 CTA: 'Envía un mensaje con la palabra CUELLO para darte información detallada sobre este protocolo.'"
+            },
+            5: {
+                tag: "Feed Visible • Carrusel / Caso Clínico (01 OCT)",
+                title: "Análisis de Caso: 'Armonización invisible y progresiva a los 35+'",
+                hook: "📸 Gancho de Carrusel (Portada): Imagen clínica refinada de diagnóstico digital de piel. Texto: 'Caso Clínico: Cómo devolver frescura al rostro sin alterar facciones.'",
+                voiceover: "📖 Estructura de Láminas:\n• Slide 1: Motivo de consulta. Paciente de 38 años refería apariencia de fatiga constante y falta de firmeza inicial.\n• Slide 2: Diagnóstico Médico. Flacidez leve en tercio medio y pérdida de calidad de piel periocular.\n• Slide 3: Plan de Tratamiento Combinado. Combinación de Juvelook (para área periocular) + Radiesse (para soporte bioestimulador facial).\n• Slide 4: Evolución a los 45 días. Fotografías comparativas estándar donde se aprecia mejoría en densidad de piel y textura, manteniendo absoluta naturalidad.\n• Slide 5: Conclusión de la Dra. Yosadara. El secreto del rejuvenecimiento invisible no es cambiar rostros, sino optimizar la calidad del tejido.",
+                caption: "📝 Copy para Instagram:\nCada paciente que entra a mi consultorio requiere una estrategia única. En este caso combinamos dos bioestimuladores con mecanismos complementarios: Juvelook para refinar la mirada y Radiesse para reestructurar la firmeza del rostro.\n\nEl resultado no es un rostro distinto, es la mejor versión de su propia piel.\n\n👨‍⚕️ Protocolos personalizados bajo valoración médica previa.",
+                cta: "👉 CTA: '¿Te identificas con este caso? Agenda tu cita de diagnóstico integral a través del enlace de la biografía.'"
+            },
+            6: {
+                tag: "Circulación / Ads • Dark Post (06 OCT)",
+                title: "¿Primera vez en consulta estética? Qué esperar de una valoración integral",
+                hook: "🎬 Gancho Visual (0-3s): La Dra. Yosadara recibiendo a una paciente en su consultorio de Polanco, dialogando de forma cálida y cercana frente al espejo. Texto: '¿Te da nervios tu primera cita médica estética?'",
+                voiceover: "🗣️ Guión Hablado (Cercano y Empático):\n'Es completamente normal sentir cierta incertidumbre antes de tu primera consulta. Por eso, en mi espacio en Polanco lo primero que hacemos no es aplicar un tratamiento, sino escucharte.\n\nEvaluamos tu estructura facial, la calidad de tu piel, tu estilo de vida y tus expectativas. Te explico detalladamente qué necesita tu piel y, sobre todo, qué NO necesitas. Sin presiones y con total transparencia médica.'",
+                caption: "📝 Copy para Ad (Polanco / Lomas / CDMX):\nTu salud y la armonía de tu rostro merecen una valoración profesional y ética.\nEn tu primera consulta realizaremos un diagnóstico facial completo para trazar un plan a tu medida.\n\n📍 Ubicación exclusiva en Polanco, CDMX.\n👩‍⚕️ Dra. Yosadara Martínez.",
+                cta: "👉 CTA Directo a Conversión: 'Da clic en el botón para chatear directamente por WhatsApp con mi equipo y agendar tu horario.'"
+            },
+            7: {
+                tag: "Feed Visible • Reel Personal (08 OCT)",
+                title: "'Mi filosofía médica: Por qué rechazo tratamientos exaggerated'",
+                hook: "🎬 Gancho Visual (0-3s): La doctora acomodando sus instrumentos o revisando su agenda, luego mira fijamente a la cámara de forma honesta y serena. Texto: 'Hay procedimientos que me pidas como paciente... y que rotundamente te voy a decir que no.'",
+                voiceover: "🗣️ Guión Hablado a cámara (Formación y Ética):\n'Como médica especialista en estética, mi primera responsabilidad es cuidar la armonía de tu rostro y tu salud a largo plazo. En una era donde las redes sociales promueven tendencias de volúmenes exagerados y rostros idénticos, mi postura es clara:\n\nPrefiero decir un 'no' ético antes que realizar un procedimiento que distorsione tu belleza natural. La verdadera medicina estética debe ser sutil, elegante y potenciar tu seguridad, jamás transformarte en alguien más.'",
+                caption: "📝 Copy para Instagram (Comunidad & Confianza):\nMi compromiso como médica es ofrecerte criterio, honestidad y resultados de los que te sientas orgullosa hoy y dentro de 10 años.\n\nGracias a cada una de mis pacientes que confían en esta visión de una belleza respetuosa y natural. 🤍\n\n¿Qué opinas tú sobre los resultados naturales en estética?",
+                cta: "👉 CTA: 'Déjame tu opinión en los comentarios. Me encanta leerte y debatir sobre la nueva medicina estética.'"
+            },
+            8: {
+                tag: "Circulación / Ads • Carrusel Comercial (13 OCT)",
+                title: "Protocolo Preventivo de Expresión Facial (Botox + Bioestimulación)",
+                hook: "📸 Gancho de Carrusel (Portada): Diseño gráfico limpio estilo editorial. Texto: 'Protocolo de Rejuvenecimiento Preventivo: El combo ideal para preparar tu piel.'",
+                voiceover: "📖 Estructura de Láminas Comercial:\n• Slide 1: El reto del cambio de estación. Cómo afecta el estrés y el clima la firmeza facial.\n• Slide 2: Acción 1 - Botox Preventivo: Relaja líneas dinámicas en frente, entrecejo y patas de gallo.\n• Slide 3: Acción 2 - Bioestimulación con Radiesse: Activa el colágeno profundo para mantener la elasticidad.\n• Slide 4: Beneficios del protocolo integrado: Efecto descansado, mejor textura y prevención de arrugas estáticas a largo plazo.\n• Slide 5: Espacios disponibles para valoración este mes en Polanco.",
+                caption: "📝 Copy enfocado a agendamiento:\nEl mejor tratamiento anti-edad es el que previene el envejecimiento estructural de la piel antes de que las arrugas se vuelvan profundas.\n\nCombina la prevención de arrugas de expresión con la bioestimulación de tu propio colágeno en un protocolo diseñado a la medida de tu rostro.\n\n📍 Atendiendo previa cita en Polanco, CDMX.",
+                cta: "👉 CTA Comercial: 'Haz clic abajo para consultar disponibilidad de fechas y agendar tu valoración previa por WhatsApp.'"
+            }
+        };
+
+        function openModal(id) {
+            const data = scriptsData[id];
+            if (!data) return;
+
+            document.getElementById('modalTag').innerText = data.tag;
+            document.getElementById('modalTitle').innerText = data.title;
+
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <div class="script-section">
+                    <div class="script-section-title">Visual / Gancho (Hook)</div>
+                    <div class="script-text">${data.hook}</div>
+                </div>
+                <div class="script-section">
+                    <div class="script-section-title">Estructura del Guión / Voiceover</div>
+                    <div class="script-text">${data.voiceover}</div>
+                </div>
+                <div class="script-section">
+                    <div class="script-section-title">Copy para Instagram</div>
+                    <div class="script-text">${data.caption}</div>
+                </div>
+                <div class="script-section" style="border-left: 3px solid var(--orange-terracotta);">
+                    <div class="script-section-title">Llamada a la Acción (CTA)</div>
+                    <div class="script-text"><strong>${data.cta}</strong></div>
+                </div>
+            `;
+
+            document.getElementById('scriptModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('scriptModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeModalOnOverlay(event) {
+            if (event.target.id === 'scriptModal') {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
